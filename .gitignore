@@ -17,6 +17,7 @@ Samples/*.m4a
 bg.png
 bg_dmg.png
 icon.jpg
+screenshot.png
 
 # Claude
 .claude/
