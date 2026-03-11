@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var showVoiceGuide = false
 
     private let exporter = AudioExporter()
+    private let maxTextBytes = 100_000 // 100 KB
 
     var body: some View {
         VStack(spacing: 16) {
@@ -136,11 +137,8 @@ struct ContentView: View {
             case .success(let url):
                 let accessing = url.startAccessingSecurityScopedResource()
                 defer { if accessing { url.stopAccessingSecurityScopedResource() } }
-                if let content = try? String(contentsOf: url) {
-                    speechManager.stopPreview()
-                    text = content
-                    exportedURL = nil
-                    statusMessage = "Ready"
+                if let content = try? String(contentsOf: url, encoding: .utf8) {
+                    loadText(content)
                 }
             case .failure(let error):
                 statusMessage = "Import failed: \(error.localizedDescription)"
@@ -177,6 +175,9 @@ struct ContentView: View {
                     Label("Paste Text", systemImage: "doc.on.clipboard")
                 }
             }
+            Text("Max 100 KB of text — enough for ~2 hours of audio")
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white.opacity(0.7), in: RoundedRectangle(cornerRadius: 10))
@@ -275,10 +276,7 @@ struct ContentView: View {
 
                 Button("Use This Text") {
                     if !pasteText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                        speechManager.stopPreview()
-                        text = pasteText
-                        exportedURL = nil
-                        statusMessage = "Ready"
+                        loadText(pasteText)
                     }
                     showPasteSheet = false
                 }
@@ -341,6 +339,17 @@ struct ContentView: View {
 
     // MARK: - Helpers
 
+    private func loadText(_ content: String) {
+        if content.utf8.count > maxTextBytes {
+            statusMessage = "File too large — 100 KB limit"
+            return
+        }
+        speechManager.stopPreview()
+        text = content
+        exportedURL = nil
+        statusMessage = "Ready"
+    }
+
     private var textIsEmpty: Bool {
         text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
@@ -365,12 +374,9 @@ struct ContentView: View {
             provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { data, _ in
                 guard let urlData = data as? Data,
                       let url = URL(dataRepresentation: urlData, relativeTo: nil),
-                      let content = try? String(contentsOf: url) else { return }
+                      let content = try? String(contentsOf: url, encoding: .utf8) else { return }
                 DispatchQueue.main.async {
-                    speechManager.stopPreview()
-                    text = content
-                    exportedURL = nil
-                    statusMessage = "Ready"
+                    loadText(content)
                 }
             }
             return true
@@ -388,10 +394,7 @@ struct ContentView: View {
                 }
                 guard let content = dropped, !content.isEmpty else { return }
                 DispatchQueue.main.async {
-                    speechManager.stopPreview()
-                    text = content
-                    exportedURL = nil
-                    statusMessage = "Ready"
+                    loadText(content)
                 }
             }
             return true

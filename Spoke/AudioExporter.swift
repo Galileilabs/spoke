@@ -52,9 +52,10 @@ final class AudioExporter {
         let proc = Process()
         proc.executableURL = URL(fileURLWithPath: "/usr/bin/say")
         proc.arguments = args
-        proc.terminationHandler = { finished in
+        proc.terminationHandler = { [weak self] finished in
             try? FileManager.default.removeItem(at: tempURL)
             DispatchQueue.main.async {
+                self?.process = nil
                 if finished.terminationStatus == 0 {
                     completion(.success(url))
                 } else {

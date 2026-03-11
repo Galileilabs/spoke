@@ -80,7 +80,7 @@ final class SpeechManager: ObservableObject {
         guard !trimmed.isEmpty else { return }
 
         let tempURL = FileManager.default.temporaryDirectory
-            .appendingPathComponent("spoke_preview.txt")
+            .appendingPathComponent("spoke_preview_\(UUID().uuidString).txt")
         do {
             try trimmed.write(to: tempURL, atomically: true, encoding: .utf8)
         } catch { return }

@@ -13,16 +13,22 @@ struct SpokeApp: App {
 }
 
 struct WindowAccessor: NSViewRepresentable {
-    func makeNSView(context: Context) -> NSView {
-        let view = NSView()
-        DispatchQueue.main.async {
-            guard let window = view.window else { return }
+    func makeNSView(context: Context) -> WindowObserverView {
+        let view = WindowObserverView()
+        return view
+    }
+
+    func updateNSView(_ nsView: WindowObserverView, context: Context) {}
+
+    class WindowObserverView: NSView {
+        private var observation: NSKeyValueObservation?
+
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            guard let window = window else { return }
             window.titlebarAppearsTransparent = true
             window.styleMask.insert(.fullSizeContentView)
             window.titleVisibility = .hidden
         }
-        return view
     }
-
-    func updateNSView(_ nsView: NSView, context: Context) {}
 }
