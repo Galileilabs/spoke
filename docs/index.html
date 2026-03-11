@@ -23,15 +23,14 @@
         body::before {
             content: "";
             position: fixed;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 600px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background:
-                radial-gradient(ellipse at 35% 40%, rgba(233, 87, 50, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 65% 50%, rgba(80, 120, 200, 0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 60%, rgba(160, 80, 180, 0.05) 0%, transparent 50%);
+                radial-gradient(ellipse at 40% 30%, rgba(233, 87, 50, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 40%, rgba(80, 120, 200, 0.06) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 50%, rgba(160, 80, 180, 0.05) 0%, transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -157,6 +156,9 @@
             <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-8 4h16v-2H4v2z"/></svg>
             Download for Mac
         </a>
+        <div style="margin-top: 0.75rem;">
+            <a href="https://github.com/Galileilabs/spoke" style="color: #999; font-size: 0.85rem; text-decoration: none;">View on GitHub</a>
+        </div>
 
         <img src="screenshot.png" alt="Spoke app screenshot" class="screenshot">
 
@@ -186,8 +188,6 @@
         <p class="req">Requires macOS 13 Ventura or later</p>
     </div>
 
-    <footer>
-        <a href="https://github.com/Galileilabs/spoke">View on GitHub</a>
-    </footer>
+    <footer></footer>
 </body>
 </html>
