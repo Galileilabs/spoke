@@ -1,0 +1,22 @@
+# Build artifacts
+build/
+*.dmg
+
+# Xcode
+xcuserdata/
+*.xcworkspace
+DerivedData/
+
+# macOS
+.DS_Store
+
+# Sample outputs
+Samples/*.m4a
+
+# Source assets (copies live in asset catalog)
+bg.png
+bg_dmg.png
+icon.jpg
+
+# Claude
+.claude/

@@ -1,0 +1,63 @@
+Hey, you still coming tonight or what?
+
+Yeah yeah, I'm coming. Just running a little late. The train was delayed again.
+
+Again? Dude, that line is cursed. You should just drive at this point.
+
+And pay twenty-two dollars for parking downtown? No thanks. I'll take my chances with the train.
+
+Fair enough. So did you end up buying that monitor you were looking at?
+
+The ultrawide? Almost. I had it in my cart and everything, but then I saw a review that said the stand wobbles. Like noticeably wobbles.
+
+That would drive me insane. I can't deal with a wobbly screen. What about the Dell one?
+
+Which Dell? They make like forty monitors.
+
+The one Jake got. The twenty-seven inch. He won't shut up about it.
+
+Oh right. It's nice but it's not ultrawide. I've been using ultrawide at work and I literally cannot go back. It's like going from two lanes to one lane on a highway.
+
+That's dramatic.
+
+I'm serious though. You put your code on one side, your browser on the other, maybe a terminal in the corner. No alt-tabbing. It changed my life.
+
+Okay okay, I believe you. So what are you gonna do then?
+
+Probably wait for a sale. Black Friday is in like six weeks. Everything drops.
+
+Smart. Hey, did you see the email from management today? The one about the return-to-office policy?
+
+I skimmed it. Three days a week starting January?
+
+Three days minimum. Could be more depending on your team lead. My manager already hinted that she wants us in four days.
+
+That's rough. I'd honestly start looking if they pulled that on me. The whole reason I took this job was the flexibility.
+
+Same. And the thing is, productivity hasn't dropped. Everyone knows it. The metrics are right there. But apparently some VP thinks the hallway conversations are worth the two-hour commute.
+
+Classic. It's always some executive who lives fifteen minutes from the office making that call.
+
+Exactly. Anyway, where are we eating tonight? Please don't say that ramen place again.
+
+What's wrong with the ramen place?
+
+Nothing's wrong with it. We've just been there the last three times. I want something different.
+
+Fine. What about that new Thai spot on Seventh? Mia said the pad see ew was incredible.
+
+Works for me. Can you make a reservation or is it walk-in?
+
+I think it's walk-in only. They're pretty new. Shouldn't be too crowded on a Wednesday.
+
+Cool. I'll be there around seven-thirty. Maybe seven-forty-five if the train decides to take another scenic detour.
+
+Just text me when you're close. I'll grab us a table.
+
+Will do. Oh, one more thing. Did you finish that bug fix for the login timeout issue? QA has been pinging me about it.
+
+Pushed it this morning. Already merged. Tell QA to pull from staging.
+
+Nice. Alright, see you tonight.
+
+Later.

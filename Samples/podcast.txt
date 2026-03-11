@@ -1,0 +1,33 @@
+Welcome back to another episode of Unfiltered Build, the show where we dig into the messy reality of making things. I'm your host, Davis Chen, and today we've got a fantastic guest. Sarah Okoro is the co-founder of Layerform, a developer tools startup that just closed their Series A. Sarah, welcome to the show.
+
+Thanks for having me, Davis. Big fan of the pod. I've been listening since like episode twelve.
+
+Oh, that's early days. We were still figuring out the audio levels back then. Pretty sure half our episodes sounded like they were recorded in a bathroom.
+
+They absolutely did. But the content was solid, so I stuck around.
+
+I appreciate that. Okay, so let's dive in. Layerform. For people who haven't heard of it, give us the thirty-second pitch.
+
+Sure. Layerform lets development teams spin up full-stack preview environments for every pull request. So instead of deploying to a shared staging server and hoping nothing breaks, every PR gets its own isolated environment with its own database, its own backend, its own frontend. You review the code and the running app at the same time.
+
+And this is all automated? Like, a developer pushes a branch and it just happens?
+
+Exactly. We integrate with your CI pipeline. You push, we provision. When the PR closes, we tear it down. The whole lifecycle is managed.
+
+That's compelling. Now I know the obvious question everyone's going to ask. How is this different from something like Vercel preview deployments?
+
+Great question, and we get it a lot. Vercel does a fantastic job with frontend previews. But most real applications are not just a frontend. You've got APIs, databases, background workers, message queues. If your preview only covers the UI layer, you're still crossing your fingers about everything else. We provision the whole stack.
+
+Right, so it's the full vertical slice. Now, let's talk about the founding story because I think it's interesting. You were at a pretty comfortable job before this. Senior engineer at Datadog, right?
+
+Yeah, I was at Datadog for about four years. Loved the team, loved the work. But I kept running into this exact problem. We had these massive pull requests that nobody wanted to review because you couldn't actually see what they did without checking out the branch and running everything locally. Reviews were slow, bugs slipped through, and the staging environment was constantly broken because three teams were deploying to it simultaneously.
+
+The classic shared staging nightmare.
+
+Exactly. And I thought, this has to be solvable. I started hacking on a prototype on weekends. Just shell scripts and Terraform at first. Super ugly. But it worked well enough that my teammates started using it, and that was the signal. When your coworkers voluntarily use your janky side project, you're onto something.
+
+That's a great litmus test. So at what point did you decide to leave and go full-time on it?
+
+Honestly, it was when I showed it to a friend at another company and she said, "Can I pay you for this?" That was the moment. Someone outside my bubble, with no obligation to be polite, wanted to give me money. I gave my notice the next month.
+
+And the rest is history. Sarah, this has been awesome. We'll link to Layerform in the show notes. Folks, go check it out. And as always, if you enjoyed this episode, leave us a review. It genuinely helps. Until next time, keep building.
