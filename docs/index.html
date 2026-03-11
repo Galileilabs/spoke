@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoke — Text to Speech for Mac</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #e95732;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #e95732;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 4px 20px rgba(233, 87, 50, 0.35);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 87, 50, 0.5);
+        }
+
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature {
+            text-align: center;
+            max-width: 160px;
+        }
+
+        .feature-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature p {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.4;
+        }
+
+        .req {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e95732;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="icon.png" alt="Spoke app icon" class="icon">
+        <h1>Spoke</h1>
+        <p class="tagline">Turn text into spoken audio. Drop a file, pick a speed, and export to M4A — all from a simple native Mac app.</p>
+
+        <a href="https://github.com/Galileilabs/spoke/releases/latest" class="download-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-8 4h16v-2H4v2z"/></svg>
+            Download for Mac
+        </a>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📄</div>
+                <h3>Drag & Drop</h3>
+                <p>Drop a text file or paste content directly</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎚️</div>
+                <h3>Speed Control</h3>
+                <p>Choose from 0.75x to 2x playback speed</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔊</div>
+                <h3>Preview</h3>
+                <p>Listen before you export</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💾</div>
+                <h3>M4A Export</h3>
+                <p>Save high-quality audio files</p>
+            </div>
+        </div>
+
+        <p class="req">Requires macOS 13 Ventura or later</p>
+    </div>
+
+    <footer>
+        <a href="https://github.com/Galileilabs/spoke">View on GitHub</a>
+    </footer>
+</body>
+</html>
