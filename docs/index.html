@@ -28,9 +28,9 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(ellipse at 40% 30%, rgba(233, 87, 50, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 40%, rgba(80, 120, 200, 0.06) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 50%, rgba(160, 80, 180, 0.05) 0%, transparent 40%);
+                radial-gradient(ellipse at 48% 45%, rgba(233, 87, 50, 0.18) 0%, transparent 50%),
+                radial-gradient(ellipse at 55% 50%, rgba(80, 120, 200, 0.14) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 48%, rgba(160, 80, 180, 0.12) 0%, transparent 40%);
             pointer-events: none;
             z-index: 0;
         }
@@ -44,6 +44,7 @@
         }
 
         h1 {
+            font-family: "SF Pro Rounded", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Nunito", "Varela Round", sans-serif;
             font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -96,13 +97,12 @@
             display: flex;
             gap: 2rem;
             margin-top: 3.5rem;
-            flex-wrap: wrap;
             justify-content: center;
         }
 
         .feature {
             text-align: center;
-            max-width: 160px;
+            flex: 0 0 130px;
         }
 
         .feature-icon {
@@ -123,6 +123,82 @@
             line-height: 1.4;
         }
 
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.1);
+            margin: 3.5rem auto 0;
+        }
+
+        .samples {
+            margin-top: 2.5rem;
+            text-align: left;
+            width: 100%;
+            max-width: 660px;
+        }
+
+        .samples h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2a2a2a;
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .samples-intro {
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .sample {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .sample-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .sample-header h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2a2a2a;
+        }
+
+        .sample-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .sample-badge.best {
+            background: #e95732;
+            color: #fff;
+        }
+
+        .sample-desc {
+            font-size: 0.82rem;
+            color: #777;
+            line-height: 1.4;
+            margin-bottom: 0.6rem;
+        }
+
+        .sample audio {
+            width: 100%;
+            height: 36px;
+        }
+
         .req {
             margin-top: 3rem;
             font-size: 0.8rem;
@@ -133,6 +209,7 @@
             margin-top: 3rem;
             font-size: 0.8rem;
             color: #bbb;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
@@ -150,7 +227,7 @@
 <body>
     <div class="hero">
         <h1>Spoke</h1>
-        <p class="tagline">Turn text into spoken audio. Drop a file, pick a speed, and export to M4A — all from a simple native Mac app.</p>
+        <p class="tagline">Turn text into spoken audio. Drop a file, pick a speed, and export to M4A — all from a simple native Mac app.<br>Fully offline — your text never leaves your Mac.</p>
 
         <a href="https://github.com/Galileilabs/spoke/releases/latest" class="download-btn">
             <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-8 4h16v-2H4v2z"/></svg>
@@ -185,10 +262,43 @@
             </div>
         </div>
 
-        <p style="margin-top: 2.5rem; font-size: 0.85rem; color: #777;">Fully offline — your text never leaves your Mac.</p>
-        <p class="req">Requires macOS 13 Ventura or later</p>
+        <div class="divider"></div>
+
+        <!-- Voice Samples -->
+        <div class="samples">
+            <h2>Hear the difference</h2>
+            <p class="samples-intro">Spoke uses your Mac's built-in voices. Quality varies dramatically — here's what to expect.</p>
+
+            <div class="sample">
+                <div class="sample-header">
+                    <span class="sample-badge best">Recommended</span>
+                    <h3>Siri 2 (US)</h3>
+                </div>
+                <p class="sample-desc">Smooth, natural reading with great pacing and clean handling of acronyms.</p>
+                <audio controls preload="none" src="siri2_us.m4a"></audio>
+            </div>
+
+            <div class="sample">
+                <div class="sample-header">
+                    <h3>Siri 1 (UK)</h3>
+                </div>
+                <p class="sample-desc">Good quality, but noticeably less smooth — occasional awkward pauses can break the flow.</p>
+                <audio controls preload="none" src="siri1_uk.m4a"></audio>
+            </div>
+
+            <div class="sample">
+                <div class="sample-header">
+                    <h3>Samantha Enhanced</h3>
+                </div>
+                <p class="sample-desc">A smaller, older voice — shows what you're stuck with without Siri voices installed.</p>
+                <audio controls preload="none" src="samantha_us.m4a"></audio>
+            </div>
+        </div>
+
     </div>
 
-    <footer></footer>
+    <footer>
+        Requires macOS 13 Ventura or later. Built in the USA, using Claude Code. <a href="https://github.com/Galileilabs/spoke/blob/main/TERMS.md">Terms of Service</a>
+    </footer>
 </body>
 </html>

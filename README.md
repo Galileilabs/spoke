@@ -22,3 +22,7 @@ Open `Spoke.xcodeproj` in Xcode and build. To create a DMG for distribution:
 ```
 ./build-dmg.sh
 ```
+
+---
+
+Built in the USA, using Claude Code
