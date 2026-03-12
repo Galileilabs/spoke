@@ -273,7 +273,7 @@
 				DEVELOPMENT_TEAM = 68T47UZ273;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Spoke;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spoke - Text to Speech on your device";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				MARKETING_VERSION = 1.0;
@@ -299,7 +299,7 @@
 				DEVELOPMENT_TEAM = 68T47UZ273;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Spoke;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spoke - Text to Speech on your device";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				MARKETING_VERSION = 1.0;
