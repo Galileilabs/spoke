@@ -14,7 +14,7 @@ Spoke is provided as free software. You are granted a non-exclusive, non-transfe
 
 ## 3. Intellectual Property
 
-The App, including its design, code, and branding, is the property of Galilei Labs. You may not reverse-engineer, modify, or redistribute the App without prior written permission, except as permitted by applicable open-source licenses.
+The App, including its design, code, and branding, is the property of Galilei Labs. You may not reverse-engineer, modify, or redistribute the App without prior written permission.
 
 ## 4. No Warranty
 
