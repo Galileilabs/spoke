@@ -369,36 +369,35 @@ struct ContentView: View {
     }
 
     private func handleDrop(_ providers: [NSItemProvider]) -> Bool {
-        // Try file URL first
-        if let provider = providers.first(where: { $0.hasItemConformingToTypeIdentifier("public.file-url") }) {
-            provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { data, _ in
-                guard let urlData = data as? Data,
-                      let url = URL(dataRepresentation: urlData, relativeTo: nil),
-                      let content = try? String(contentsOf: url, encoding: .utf8) else { return }
-                DispatchQueue.main.async {
-                    loadText(content)
+        guard let provider = providers.first else { return false }
+
+        // loadFileRepresentation is the modern API for Finder file drops —
+        // it gives us a temporary URL to the file while it's still accessible.
+        let textTypes = ["public.utf8-plain-text", "public.plain-text"]
+        for typeId in textTypes {
+            if provider.hasItemConformingToTypeIdentifier(typeId) {
+                provider.loadFileRepresentation(forTypeIdentifier: typeId) { url, _ in
+                    guard let url = url,
+                          let content = try? String(contentsOf: url, encoding: .utf8) else { return }
+                    DispatchQueue.main.async { self.loadText(content) }
                 }
+                return true
+            }
+        }
+
+        // Fallback: generic file URL (e.g. drag from somewhere other than Finder)
+        if provider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
+            provider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, _ in
+                let url: URL?
+                if let u = item as? URL { url = u }
+                else if let data = item as? Data { url = URL(dataRepresentation: data, relativeTo: nil) }
+                else { url = nil }
+                guard let u = url, let content = try? String(contentsOf: u, encoding: .utf8) else { return }
+                DispatchQueue.main.async { self.loadText(content) }
             }
             return true
         }
-        // Try plain text
-        if let provider = providers.first(where: { $0.hasItemConformingToTypeIdentifier("public.plain-text") }) {
-            provider.loadItem(forTypeIdentifier: "public.plain-text", options: nil) { data, _ in
-                let dropped: String?
-                if let str = data as? String {
-                    dropped = str
-                } else if let d = data as? Data {
-                    dropped = String(data: d, encoding: .utf8)
-                } else {
-                    dropped = nil
-                }
-                guard let content = dropped, !content.isEmpty else { return }
-                DispatchQueue.main.async {
-                    loadText(content)
-                }
-            }
-            return true
-        }
+
         return false
     }
 
